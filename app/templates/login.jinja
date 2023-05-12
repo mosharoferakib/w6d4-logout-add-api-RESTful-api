@@ -1,0 +1,22 @@
+{% extends "base.jinja" %}
+
+{% block content%}
+<form action="" method="post">
+<img src="{{ url_for('static',filename='Classic.png') }}" alt="" width="600" height="200">
+<h2 style="color:aquamarine">Login</h2>
+{{ form.hidden_tag() }}
+
+<p>
+    {{ form.username.label }}<br>
+    {{ form.username(size=40) }}
+</p>
+<p>
+    {{ form.password.label }}<br>
+    {{ form.password(size=40) }}
+    {% for error in form.password.errors %}
+      <span class="err_msg">{{ error }}</span>
+    {% endfor %}
+</p>
+<p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+
+<form action="" method="post">
+<h2 style="color:aquamarine">Post your favorite Car Collections here!</h2>
+{{ form.hidden_tag() }}
+
+<p>
+    {{ form.body.label }}<br>
+    {{ form.body(size=100) }}
+    {% for error in form.body.errors %}
+      <span class="err-msg">{{ error }}</span>
+    {% endfor %}
+</p>
+<p>{{ form.submit() }}</p>
+</form>
+
+{% endblock %}

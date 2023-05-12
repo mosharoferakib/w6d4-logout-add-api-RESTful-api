@@ -1,0 +1,14 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+
+<h3 style="color:aquamarine">Cars</h3>
+{% for car in cars %}
+<p>{{ car }}</p>
+{% endfor %}
+<h3 style="color:aqua">Drivers</h3>
+{% for driver in drivers %}
+<p>{{ driver }}</p>
+{% endfor %}
+
+{% endblock %}
